@@ -3,11 +3,11 @@ import java.util.Scanner;
 class Calc {
 
     public static void main(String[] args) throws Exception {
-        Scanner scanner = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in, "utf-8");
 
-        System.out.println("Примечание! При вводе Римского 0, необходимо ввести английскую букву О!");
+        System.out.println("ГЏГ°ГЁГ¬ГҐГ·Г Г­ГЁГҐ! ГЏГ°ГЁ ГўГўГ®Г¤ГҐ ГђГЁГ¬Г±ГЄГ®ГЈГ® 0, Г­ГҐГ®ГЎГµГ®Г¤ГЁГ¬Г® ГўГўГҐГ±ГІГЁ Г Г­ГЈГ«ГЁГ©Г±ГЄГіГѕ ГЎГіГЄГўГі ГЋ!");
         System.out.println("-----------------------------------------------------------------");
-        System.out.println("Введите Первое число, затем Знак арифметического действия, Второе число. Нажмите Enter!:");
+        System.out.println("Г‚ГўГҐГ¤ГЁГІГҐ ГЏГҐГ°ГўГ®ГҐ Г·ГЁГ±Г«Г®, Г§Г ГІГҐГ¬ Г‡Г­Г ГЄ Г Г°ГЁГґГ¬ГҐГІГЁГ·ГҐГ±ГЄГ®ГЈГ® Г¤ГҐГ©Г±ГІГўГЁГї, Г‚ГІГ®Г°Г®ГҐ Г·ГЁГ±Г«Г®. ГЌГ Г¦Г¬ГЁГІГҐ Enter!:");
         String expression = scanner.nextLine();
         System.out.println(parse(expression));
     }
@@ -20,11 +20,11 @@ class Calc {
 
         String[] operands = expression.split("[+\\-*/]");
 
-        if (operands.length != 2) throw new Exception("Ввести необходимо только два числа");
+        if (operands.length != 2) throw new Exception("Г‚ГўГҐГ±ГІГЁ Г­ГҐГ®ГЎГµГ®Г¤ГЁГ¬Г® ГІГ®Г«ГјГЄГ® Г¤ГўГ  Г·ГЁГ±Г«Г ");
 
         op = detectOperation(expression);
 
-        if (op == null) throw new Exception("Неизвестный знак действия!");
+        if (op == null) throw new Exception("ГЌГҐГЁГ§ГўГҐГ±ГІГ­Г»Г© Г§Г­Г ГЄ Г¤ГҐГ©Г±ГІГўГЁГї!");
 
         if (Roman.isRoman(operands[0]) && Roman.isRoman(operands[1])) {
 
@@ -40,11 +40,11 @@ class Calc {
         }
 
         else {
-            throw new Exception("Числа должны быть или только Арабские, или только Римские! Не торопитесь!");
+            throw new Exception("Г—ГЁГ±Г«Г  Г¤Г®Г«Г¦Г­Г» ГЎГ»ГІГј ГЁГ«ГЁ ГІГ®Г«ГјГЄГ® ГЂГ°Г ГЎГ±ГЄГЁГҐ, ГЁГ«ГЁ ГІГ®Г«ГјГЄГ® ГђГЁГ¬Г±ГЄГЁГҐ! ГЌГҐ ГІГ®Г°Г®ГЇГЁГІГҐГ±Гј!");
         }
 
         if (num_1 > 10 || num_2 > 10) {
-            throw new Exception("Соблюдайте диапазон от 0 до 10!");
+            throw new Exception("Г‘Г®ГЎГ«ГѕГ¤Г Г©ГІГҐ Г¤ГЁГ ГЇГ Г§Г®Г­ Г®ГІ 0 Г¤Г® 10!");
         }
 
         int arabian = calc(num_1, num_2, op);
@@ -53,7 +53,7 @@ class Calc {
 
             if (arabian <= 0) {
 
-                throw new Exception("Римское число не может быть отрицательным!");
+                throw new Exception("ГђГЁГ¬Г±ГЄГ®ГҐ Г·ГЁГ±Г«Г® Г­ГҐ Г¬Г®Г¦ГҐГІ ГЎГ»ГІГј Г®ГІГ°ГЁГ¶Г ГІГҐГ«ГјГ­Г»Г¬!");
             }
 
             result = Roman.convertToRoman(arabian);
