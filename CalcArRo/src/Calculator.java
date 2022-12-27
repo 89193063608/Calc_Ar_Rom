@@ -3,7 +3,7 @@ import java.util.Scanner;
 class Calc {
 
     public static void main(String[] args) throws Exception {
-        Scanner scanner = new Scanner(System.in, "utf-8");
+        Scanner scanner = new Scanner(System.in, "windows-1251");
 
         System.out.println("Ïðèìå÷àíèå! Ïðè ââîäå Ðèìñêîãî 0, íåîáõîäèìî ââåñòè àíãëèéñêóþ áóêâó Î!");
         System.out.println("-----------------------------------------------------------------");
